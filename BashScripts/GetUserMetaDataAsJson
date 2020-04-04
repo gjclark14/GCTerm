@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+# Gets access token, refresh token, other user meta data, and profile info for
+# the user who granted authentication.
+
+# cliend_id from https://www.strava.com/settings/api
+# client_secret from https://www.strava.com/settings/api
+# code from what the http authorization request webpage
+
+echo $1
+curl -v -X POST https://www.strava.com/oauth/token \
+	-F client_id=45338 \
+	-F client_secret=71939ef0bec5a6e9f956cb0a72f30e51ce224bf1 \
+	-F code=$1 \
+	-F grant_type=authorization_code > UserData/user
+
+# http://www.strava.com/oauth/authorize?client_id=45338&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read

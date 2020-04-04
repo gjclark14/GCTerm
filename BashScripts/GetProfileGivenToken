@@ -1,0 +1,4 @@
+#!/bin/bash
+curl -X GET \
+	https://www.strava.com/api/v3/athlete \
+	-H 'Authorization: Bearer 50d0321fcdc95f169f4cdfdf1926d9dc6ef42fa8'
